@@ -13,5 +13,6 @@
         public byte[] Photo { get; set; }
         public List<Project> Projects { get; set; } = new List<Project>();
         public List<Desk> Desks { get; set; } = new List<Desk>();
+        public UserStatus Status { get; set; }
     }
 }
