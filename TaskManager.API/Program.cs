@@ -1,3 +1,7 @@
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using TaskManager.API.Models.Data;
+
 namespace TaskManager.API
 {
     public class Program
@@ -12,6 +16,11 @@ namespace TaskManager.API
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
+            var services = builder.Services;
+            
+
+            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer());
 
             var app = builder.Build();
 
