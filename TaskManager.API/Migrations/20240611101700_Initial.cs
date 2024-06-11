@@ -50,7 +50,7 @@ namespace TaskManager.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Project",
+                name: "Projects",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
@@ -64,9 +64,9 @@ namespace TaskManager.API.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Project", x => x.Id);
+                    table.PrimaryKey("PK_Projects", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Project_ProjectAdmins_AdminId",
+                        name: "FK_Projects_ProjectAdmins_AdminId",
                         column: x => x.AdminId,
                         principalTable: "ProjectAdmins",
                         principalColumn: "Id");
@@ -91,9 +91,9 @@ namespace TaskManager.API.Migrations
                 {
                     table.PrimaryKey("PK_Desks", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Desks_Project_ProjectId",
+                        name: "FK_Desks_Projects_ProjectId",
                         column: x => x.ProjectId,
-                        principalTable: "Project",
+                        principalTable: "Projects",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -115,9 +115,9 @@ namespace TaskManager.API.Migrations
                 {
                     table.PrimaryKey("PK_ProjectUser", x => new { x.AllUsersId, x.ProjectsId });
                     table.ForeignKey(
-                        name: "FK_ProjectUser_Project_ProjectsId",
+                        name: "FK_ProjectUser_Projects_ProjectsId",
                         column: x => x.ProjectsId,
-                        principalTable: "Project",
+                        principalTable: "Projects",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
@@ -178,14 +178,14 @@ namespace TaskManager.API.Migrations
                 column: "ProjectId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Project_AdminId",
-                table: "Project",
-                column: "AdminId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_ProjectAdmins_UserId",
                 table: "ProjectAdmins",
                 column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Projects_AdminId",
+                table: "Projects",
+                column: "AdminId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProjectUser_ProjectsId",
@@ -215,7 +215,7 @@ namespace TaskManager.API.Migrations
                 name: "Desks");
 
             migrationBuilder.DropTable(
-                name: "Project");
+                name: "Projects");
 
             migrationBuilder.DropTable(
                 name: "ProjectAdmins");

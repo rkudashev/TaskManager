@@ -12,7 +12,7 @@ using TaskManager.API.Models.Data;
 namespace TaskManager.API.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20240611095142_Initial")]
+    [Migration("20240611101700_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -117,7 +117,7 @@ namespace TaskManager.API.Migrations
 
                     b.HasIndex("AdminId");
 
-                    b.ToTable("Project");
+                    b.ToTable("Projects");
                 });
 
             modelBuilder.Entity("TaskManager.API.Models.ProjectAdmin", b =>

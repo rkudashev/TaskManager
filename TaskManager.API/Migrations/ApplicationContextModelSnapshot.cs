@@ -115,7 +115,7 @@ namespace TaskManager.API.Migrations
 
                     b.HasIndex("AdminId");
 
-                    b.ToTable("Project");
+                    b.ToTable("Projects");
                 });
 
             modelBuilder.Entity("TaskManager.API.Models.ProjectAdmin", b =>

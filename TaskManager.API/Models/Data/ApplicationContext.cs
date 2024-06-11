@@ -6,7 +6,7 @@ namespace TaskManager.API.Models.Data
     {
         public DbSet<User> Users { get; set; }
         public DbSet<ProjectAdmin> ProjectAdmins { get; set; }
-        public DbSet<Project> Project { get; set; }
+        public DbSet<Project> Projects { get; set; }
         public DbSet<Desk> Desks { get; set; }
         public DbSet<TaskModel> Tasks { get; set; }
 
