@@ -17,10 +17,11 @@ namespace TaskManager.API
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            string connection = builder.Configuration.GetConnectionString("DefaultConnection");
+
             var services = builder.Services;
             
-
-            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer());
+            services.AddDbContext<ApplicationContext>(options => options.UseSqlServer(connection));
 
             var app = builder.Build();
 

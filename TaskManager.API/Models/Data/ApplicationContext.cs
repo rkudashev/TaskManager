@@ -13,12 +13,18 @@ namespace TaskManager.API.Models.Data
         public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
             Database.EnsureCreated();
-            if(Users.Any(u => u.Status == UserStatus.Admin) == false)
-            {
-                var admin = new User("Ravil", "Kudashev", "admin", "qwerty123", UserStatus.Admin);
-                Users.Add(admin);
-                SaveChanges();
-            }
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<User>().HasData(
+                new User { Id = 1, FirstName = "Ravil", 
+                    LastName = "Kudashev", 
+                    Email = "admin", 
+                    Password = "qwerty123", 
+                    Status = UserStatus.Admin,
+                }
+            );
         }
     }
 }
