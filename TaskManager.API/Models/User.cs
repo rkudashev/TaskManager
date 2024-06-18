@@ -32,9 +32,9 @@ namespace TaskManager.API.Models
             Status = status;
         }
 
-        public UserModel ToDto()
+        public UserDTO ToDto()
         {
-            return new UserModel
+            return new UserDTO
             {
                 FirstName = this.FirstName,
                 LastName = this.LastName,

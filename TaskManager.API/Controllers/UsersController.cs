@@ -17,7 +17,7 @@ namespace TaskManager.API.Controllers
         }
 
         [HttpPost("create")]
-        public IActionResult CreateUser([FromBody] UserModel userModel)
+        public IActionResult CreateUser([FromBody] UserDTO userModel)
         {
             if (userModel != null)
             {

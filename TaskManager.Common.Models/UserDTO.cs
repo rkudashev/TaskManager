@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TaskManager.Common.Models
 {
-    public class UserModel
+    public class UserDTO
     {
         public int Id { get; set; }
         public string FirstName { get; set; }
@@ -19,7 +19,7 @@ namespace TaskManager.Common.Models
         public byte[]? Photo { get; set; }
         public UserStatus Status { get; set; }
 
-        public UserModel(string fname, string lname, string email, string password,
+        public UserDTO(string fname, string lname, string email, string password,
             UserStatus status, string phone)
         {
             FirstName = fname;
@@ -31,6 +31,6 @@ namespace TaskManager.Common.Models
             Status = status;
         }
 
-        public UserModel() { }
+        public UserDTO() { }
     }
 }
