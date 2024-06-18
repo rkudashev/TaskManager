@@ -12,7 +12,7 @@ using TaskManager.API.Models.Data;
 namespace TaskManager.API.Migrations
 {
     [DbContext(typeof(ApplicationContext))]
-    [Migration("20240611101700_Initial")]
+    [Migration("20240618082716_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
