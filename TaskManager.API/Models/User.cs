@@ -32,10 +32,23 @@ namespace TaskManager.API.Models
             Status = status;
         }
 
+        public User(UserDTO dto)
+        {
+            FirstName = dto.FirstName;
+            LastName = dto.LastName;
+            Email = dto.Email;
+            Password = dto.Password;
+            Phone = dto.Phone;
+            Photo = dto.Photo;
+            RegistrationDate = dto.RegistrationDate;
+            Status = dto.Status;
+        }
+
         public UserDTO ToDto()
         {
             return new UserDTO
             {
+                Id = this.Id,
                 FirstName = this.FirstName,
                 LastName = this.LastName,
                 Email = this.Email,
